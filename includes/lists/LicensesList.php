@@ -446,6 +446,19 @@ class LicensesList extends WP_List_Table
             __('Delete', 'license-manager-for-woocommerce')
         );
 
+        // meta
+        $actions['meta'] = sprintf(
+            '<a href="%s" target="_blank">%s</a>',
+            admin_url(
+                sprintf(
+                    'admin.php?page=%s&license_id=%d',
+                    'lmfwc_license_metas',
+                    intval($item['id']),
+                )
+            ),
+            'meta'
+        );
+
         return $title . $this->row_actions($actions);
     }
 
